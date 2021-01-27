@@ -37,7 +37,14 @@ public class CeMain {
 
 
 
-    //main
+        /*JDK9的新特性
+         * List Set Map 增加了of方法 可以一次性给集合添加多个元素
+         * 使用前提:当集合中存储的个数已经确定的时候使用
+         * */
+        List<String> listdemo = List.of("a", "b", "c", "e");
+        System.out.println(listdemo);
+
+
     }
 
     private static void CharSum() {
