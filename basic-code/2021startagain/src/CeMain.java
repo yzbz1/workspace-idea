@@ -1,5 +1,7 @@
 import useMod.Person;
 //make something change
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class CeMain {
@@ -33,7 +35,7 @@ public class CeMain {
 
         //练习:统计字符串各个字符的个数
         System.out.println("字符统计");
-        CharSum();
+
 
 
 
@@ -44,7 +46,20 @@ public class CeMain {
         List<String> listdemo = List.of("a", "b", "c", "e");
         System.out.println(listdemo);
 
+        /*编译期异常*/
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");   //创建工具类对象格式化日期
+        try {
+            Date date1 = sdf.parse("2020-10-21");    //将字符串转换为date格式  parse写完报错需要处理异常,此为编译期异常
+            System.out.println(date1);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
+        //trycatch 处理完异常 程序可以继续运行
+
+
+
+        //mian end
     }
 
     private static void CharSum() {
