@@ -55,9 +55,22 @@ public class CeMain {
             e.printStackTrace();
         }
 
+        int[] arr4 = {1,2,3};
+        try{
+            //可能出现异常的代码
+            System.out.println(arr4[3]);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        System.out.println("后续代码");
+
+
         //trycatch 处理完异常 程序可以继续运行
 
-
+        /*Error 错误*/
+        //创建的数组太大了,超出jvm分配的内存
+        //必须修改代码,吧数组创建的小一点
+        //--int[] arr1 = new int[1024*1024*1024];
 
         //main end
     }
