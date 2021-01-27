@@ -59,7 +59,7 @@ public class CeMain {
 
 
 
-        //mian end
+        //main end
     }
 
     private static void CharSum() {
