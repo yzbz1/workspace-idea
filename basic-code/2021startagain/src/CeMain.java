@@ -72,7 +72,31 @@ public class CeMain {
         //必须修改代码,吧数组创建的小一点
         //--int[] arr1 = new int[1024*1024*1024];
 
+        //throw关键字,   throw new xxxException(“异常产生的原因”)
+        int[] arr = new int[3];
+        int e = getElement(arr, 3);
+        System.out.println(e);
+
+
         //main end
+    }
+
+
+    public static int getElement(int[] arr,int index){
+        /*第一步：对方法的参数进行合法性确认*/
+        //判断传入的数组是否为空
+        if (arr == null){
+            throw new NullPointerException("参数数组为空");
+        }
+        //判断index, 是否在数组的索引范围以内
+        if (index<0 || index > arr.length-1){
+            throw new ArrayIndexOutOfBoundsException("传入的索引超出了数组的使用范围");
+        }
+
+
+
+        int ele = arr[index];
+        return ele;
     }
 
     private static void CharSum() {
