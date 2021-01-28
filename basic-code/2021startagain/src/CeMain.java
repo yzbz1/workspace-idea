@@ -78,18 +78,54 @@ public class CeMain {
         //throw关键字,   throw new xxxException(“异常产生的原因”)
         int[] arr = new int[3];
 
-        //************main end
+
 
         /*定义一个方法对传递的文件路径进行合法判断
         * 如果路径不是"c:\\a.txt"那门就抛出找不到文件异常
         * 注意:FileNotFoundException是编译异常,所以抛出了异常就必须进行处理
         * */
         try {
-            readFile("c:\\a.txt");
+            readFile("c:\\a.tst");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            //System.out.println(e.getMessage());   --传递的文件路径不是c:\a.txt
+            //System.out.println(e.toString());     --java.io.FileNotFoundException: 传递的文件路径不是c:\a.txt
+            e.printStackTrace();  //打印最为全面
+            /*java.io.FileNotFoundException: 传递的文件路径不是c:\a.txt
+            at CeMain.readFile(CeMain.java:125)
+            at CeMain.main(CeMain.java:88)
+            java.io.FileNotFoundException: 传递的文件路径不是c:\a.txt
+            at CeMain.readFile(CeMain.java:125)
+            at CeMain.main(CeMain.java:88)*/
         }
         System.out.println("路径正确,读取文件");
+
+        /*try..catche 异常处理的第二种方式
+        自己处理异常
+        try{
+            可能产生异常的代码
+        }catch(定义一个异常变量用来接收catch中的异常){
+            对于异常的处理方法
+            一般记录到日志表中
+        }
+        try中坑能抛出多个异常对象,
+        try产生异常就会执行catch中的异常处理逻辑  处理完后继续执行之后的代码
+        */
+
+
+        /*throwable
+         1 String getMessage() 返回此throwable 的简短描述
+         2 String toString()  返回此 throwable 的详细字符串
+         3 void printStackTrace JVM打印异常默认次方法,最全面
+         *
+         */
+
+        /*final代码块*/
+        int[] arr0 = new int[3];
+        System.out.println(arr0[3]);
+
+
+        //************main end
     }
 
     private static void readFile(@NotNull String fileName) throws IOException {
