@@ -1,11 +1,14 @@
+import org.jetbrains.annotations.NotNull;
 import useMod.Person;
 //make something change
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class CeMain {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("2021再启程");
         // map遍历方法1:通过键找值的方法获取 keySet
         HashMap<String, Integer> map = new HashMap<>();
@@ -74,11 +77,29 @@ public class CeMain {
 
         //throw关键字,   throw new xxxException(“异常产生的原因”)
         int[] arr = new int[3];
-        int e = getElement(arr, 3);
-        System.out.println(e);
 
+        //************main end
 
-        //main end
+        /*定义一个方法对传递的文件路径进行合法判断
+        * 如果路径不是"c:\\a.txt"那门就抛出找不到文件异常
+        * 注意:FileNotFoundException是编译异常,所以抛出了异常就必须进行处理
+        * */
+        try {
+            readFile("c:\\a.txt");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        System.out.println("路径正确,读取文件");
+    }
+
+    private static void readFile(@NotNull String fileName) throws IOException {
+        if (!fileName.equals("c:\\a.txt")){
+            throw new FileNotFoundException("传递的文件路径不是c:\\a.txt");
+        }
+        /*传入的文件类型不对  抛出异常*/
+        if (!fileName.endsWith(".txt")){
+            throw new IOException("文件格式不正确");
+        }
     }
 
 
