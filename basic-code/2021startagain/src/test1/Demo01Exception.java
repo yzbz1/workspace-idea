@@ -19,13 +19,14 @@ public class Demo01Exception {
 
         List<Integer> list = List.of(1, 2, 3);
         try{
-            System.out.println(list.get(3));
+            System.out.println(list.get(4));
         }catch(Exception e){
             System.out.println(e);
         }
 
         System.out.println("后续");
 
-
+        //一个try 多个catch注意事项
+        //catch里面的异常变量如果以后父子关系,那么子类必须写在上面
     }
 }
