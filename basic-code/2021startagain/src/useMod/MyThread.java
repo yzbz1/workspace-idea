@@ -10,11 +10,17 @@ public class MyThread extends Thread{
 
     @Override
     public void run() {
-        for (int i = 0; i < 20; i++) {
             //获取线程名称
-            String name = getName();
-            System.out.println(name);
-            System.out.println("run"+i);
-        }
+            /*String name = getName();
+            System.out.println(name);*/
+
+            //获取正在运行的进程
+
+        //链式编程
+        System.out.println(Thread.currentThread().getName());
+
+
+
+
     }
 }
