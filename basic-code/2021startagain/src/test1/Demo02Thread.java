@@ -1,6 +1,6 @@
 package test1;
 
-import useMod.Person;
+import useMod.MyThread;
 
 /**
     创建多线程程序的第一种方式
@@ -13,5 +13,10 @@ public class Demo02Thread {
         //创建Thread类的子类对象
         MyThread mt = new MyThread();
         //调用Thread类中的start 方法,开启新线程
+        mt.start();
+
+        for (int i = 0; i < 20; i++) {
+            System.out.println("main"+i);
+        }
     }
 }
