@@ -4,6 +4,7 @@ import useMod.RunableImpl;
 
 public class Demo01Runable  {
     public static void main(String[] args) {
+        //创建一个Runnable接口的实现类对象
         RunableImpl run = new RunableImpl();
         Thread thread = new Thread(run);
         thread.start();
