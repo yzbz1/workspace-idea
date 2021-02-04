@@ -8,6 +8,7 @@ public class Demo01Ticket {
     public static void main(String[] args) {
         //创建Runable接口的实现类对象
         RunnableImpl run = new RunnableImpl();
+        System.out.println("run对象"+run);
         //创建Thread类对象
         Thread t0 = new Thread(run);
         Thread t1 = new Thread(run);

@@ -1,10 +1,9 @@
 package Synchronized02;
 /*
     实现卖票案例
-    ThreadSafe包里面的卖票,卖出了不存在的票和重复的票
-
-    此处解决线程安全问题
-    1 使用同步代码块
+    第二种方案
+    1 抽取共享的数据 放入方法中
+    2使用synchronized修饰该方法
  */
 public class RunnableImpl implements Runnable{
     //定以一个多线程共享的票源
@@ -17,22 +16,28 @@ public class RunnableImpl implements Runnable{
     @Override
     public void run() {
         while(true){
-            //同步代码块
-            synchronized(obj){
-                //判断票是否存在
-                if (ticket > 0){
+            System.out.println("this:"+this);
+            //调用使用synchronized修饰的方法
 
-                    try {
-                        Thread.sleep(10);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    System.out.println(Thread.currentThread().getName()+"正在卖第"+ticket+"张票");
-                    ticket --;
-                }
+            payTicket();
+
+        }
+        }
+
+
+        //定义一个同步方法
+    public synchronized void payTicket(){
+        //判断票是否存在
+        if (ticket > 0){
+
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-
+            System.out.println(Thread.currentThread().getName()+"正在卖第"+ticket+"张票");
+            ticket --;
         }
-        }
+    }
     }
 
