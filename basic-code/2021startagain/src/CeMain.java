@@ -1,11 +1,14 @@
-import org.jetbrains.annotations.NotNull;
+
+
 import useMod.Person;
-//make something change
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+
+//make something change
 
 public class CeMain {
     public static void main(String[] args) throws IOException {
@@ -128,7 +131,7 @@ public class CeMain {
         //************main end
     }
 
-    private static void readFile(@NotNull String fileName) throws IOException {
+    private static void readFile(String fileName) throws IOException {
         if (!fileName.equals("c:\\a.txt")){
             throw new FileNotFoundException("传递的文件路径不是c:\\a.txt");
         }

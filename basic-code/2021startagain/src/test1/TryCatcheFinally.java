@@ -7,7 +7,9 @@ package test1;
 
 * */
 
-import org.jetbrains.annotations.NotNull;
+
+
+
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -25,7 +27,7 @@ public class TryCatcheFinally {
 
 
 
-    private static void readFile(@NotNull String fileName) throws IOException {
+    private static void readFile( String fileName) throws IOException {
         if (!fileName.equals("c:\\a.txt")){
             throw new FileNotFoundException("传递的文件路径不是c:\\a.txt");
         }

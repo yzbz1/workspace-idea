@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="workspace">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/basic-code/2021startagain/src" />
+      <root url="file://$PROJECT_DIR$/basic-code/day04-code/src" />
+      <root url="file://$PROJECT_DIR$/basic-code/myObject/src" />
+    </SOURCES>
+  </library>
+</component>
