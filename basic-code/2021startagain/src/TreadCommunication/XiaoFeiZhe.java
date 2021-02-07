@@ -13,6 +13,7 @@ public class XiaoFeiZhe extends Thread{
     public void run() {
         //使用死循环 持续进程运行
         while (true){
+            //使用同步,保证只有一个线程在执行
             synchronized(bz){
                 if (bz.status == false){
                     //没有包子 进入等待
@@ -23,8 +24,13 @@ public class XiaoFeiZhe extends Thread{
                     }
                 }
                 //被唤醒之后的代码
-                System.out.println("消费者正在吃"+bz.pi+"");
-
+                System.out.println("消费者正在吃"+bz.pi+bz.Xian+"包子");
+                //吃完包子,修改状态
+                bz.status = false;
+                //唤醒包子铺线程,生产包子
+                bz.notify();
+                System.out.println("消费者吃完"+bz.pi+bz.Xian+"包子"+"开始生产");
+                System.out.println("----------------");
             }
         }
     }
