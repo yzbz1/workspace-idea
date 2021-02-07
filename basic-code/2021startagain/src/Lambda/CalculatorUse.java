@@ -6,9 +6,12 @@ package Lambda;
 * */
 public class CalculatorUse {
     public static void main(String[] args) {
-        invokeCalc(5, 6,(a,b) -> {
+        /*invokeCalc(5, 6,(a,b) -> {
             return a + b;
-        });
+        });*/
+
+        //使用Lambda省略优化
+        invokeCalc(5, 6,(a,b) -> a + b);
     }
 
     private static void invokeCalc(int a,int b,Calculator c) {

@@ -31,6 +31,12 @@ public class PersonUse {
             return o1.getAge() - o2.getAge();
         });
 
+         /*
+        优化写法使用Lambda,省略
+         */
+
+        Arrays.sort(arr,(o1,o2) -> o1.getAge() - o2.getAge());
+
 
         //遍历数组
         for (Person p : arr) {
