@@ -9,5 +9,6 @@ public class Demo01File {
 
         System.out.println(pathSeparator);
         System.out.println(separator);
+        
     }
 }
