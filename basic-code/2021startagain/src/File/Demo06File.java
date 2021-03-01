@@ -5,5 +5,8 @@ package File;
     public File[] lsitFiles()
  */
 public class Demo06File {
+    public static void main(String[] args) {
+
+    }
 
 }
