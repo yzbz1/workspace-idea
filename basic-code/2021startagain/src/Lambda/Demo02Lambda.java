@@ -33,7 +33,9 @@ public class Demo02Lambda {
 
         //再次优化,可省略的省略
             //1.同时省略了方法体的 {} ;
-        new Thread(() -> System.out.println(Thread.currentThread().getName()+"使用lambda省略")).start();
+        new Thread(
+                () -> System.out.println(Thread.currentThread().getName()+"使用lambda省略")
+        ).start();
 
 
 
